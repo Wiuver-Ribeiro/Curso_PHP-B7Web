@@ -3,31 +3,38 @@ session_start();
 
 require '../../config/config.php';
 
-$id = $_GET['id'];
+$id = filter_input(INPUT_GET,'id');
 $sql = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id ");
 $sql->bindValue(':id', $id);
 $sql->execute();
 
 $dados = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
-
-<form method="post">
-  <input type="text" value="<?php echo $dados['id']; ?>" readonly>
+<link rel="stylesheet" href="./editar.css">
+<div class="container">
+  <form method="post">
+  <h2>Editar</h2>
+  <input type="hidden" value="<?php echo $dados['id']; ?>" readonly>
+  <label><b>Nome</b></label>
   <input type="text" name="nome" value="<?php echo $dados['nome']; ?>" >
+  <label><b>E-mail</b></label>
   <input type="text" name="email" value="<?php echo $dados['email']; ?>" >
+  <label><b>Senha</b></label>
   <input type="text" name="senha" value="<?php echo $dados['senha']; ?>" >
   <input type="submit" value="Salvar" name="editar">
 </form>
-
+</div>
 <?php 
   if(isset($_POST['editar'])): 
 
     $nome = filter_input(INPUT_POST,'nome');
     $email = filter_input(INPUT_POST,'email');
+    $senha = filter_input(INPUT_POST, 'senha');
 
-    $sql = $pdo->prepare("UPDATE usuarios SET nome= :nome, email= :email WHERE id = :id ");
+    $sql = $pdo->prepare("UPDATE usuarios SET nome= :nome, email= :email, senha = :senha WHERE id = :id ");
     $sql->bindValue(':nome',$nome);
     $sql->bindValue(':email',$email);
+    $sql->bindValue(':senha',$senha);
     $sql->bindValue(':id',$id);
     $sql->execute();
 

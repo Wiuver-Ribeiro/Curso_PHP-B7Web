@@ -2,7 +2,7 @@
 session_start();
 require '../../config/config.php';
 
-$id = $_GET['id'];
+$id = filter_input(INPUT_GET,'id');
 
 $sql = $pdo->prepare("DELETE FROM usuarios WHERE id = :id ");
 $sql->bindValue(':id', $id);

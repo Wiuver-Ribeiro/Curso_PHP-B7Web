@@ -6,7 +6,7 @@ if (!$_SESSION['login']) {
 
 require './config/config.php';
 
-$sql = $pdo->prepare("SELECT * FROM usuarios");
+$sql = $pdo->prepare("SELECT * FROM usuarios ORDER BY nome");
 $sql->execute();
 $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
 ?>

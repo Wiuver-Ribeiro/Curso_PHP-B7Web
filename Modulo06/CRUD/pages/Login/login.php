@@ -29,7 +29,7 @@
 
       <input type="submit" value="Logar" name="login">
       <div class="btn-acoes">
-        <a href="#">Esqueci minha senha</a>
+        <a class="esqueci_senha" href="../Recuperar/esqueci_senha.php">Esqueci minha senha</a>
         <span class="nao_tem_conta">Ainda não tem  conta?</span>
         <a class="link" href="../Cadastrar/adicionar.php">Cadastre-se</a>
       </div>
@@ -52,6 +52,11 @@
     if(isset($_SESSION['cadastrado'])) {
       echo $_SESSION['cadastrado'];
       $_SESSION['cadastrado'] = '';
+    }
+
+    if(isset($_SESSION['sucesso'])) {
+      echo $_SESSION['sucesso'];
+      $_SESSION['sucesso'] = '';
     }
     ?>
   </div>

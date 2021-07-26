@@ -91,7 +91,7 @@ body {
   width:100%;
   padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   background:#E1EAEB;
 }
@@ -101,7 +101,7 @@ body {
   background: #f7f8f1;
   padding: 6px;
   color: rgb(29, 162, 193);
-  margin-left: 10px;
+  margin-left: 5rem;
   border: 1px solid #cbd518;
  
   -webkit-border-radius: 4px;
@@ -115,7 +115,7 @@ body {
   color: #7f7c7f;
   text-decoration: none;
   justify-self: flex-end;
-  margin-right: -3rem;
+  margin-right: -4rem;
 }
 .container .btn-acoes .nao_tem_conta:hover {
   color: #665d66;
@@ -144,7 +144,3 @@ body {
   border-radius: 0.56rem;
 }
 
-
-.esqueci_senha {
-  color: #000;
-}

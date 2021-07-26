@@ -8,21 +8,21 @@ require '../../config/config.php'; ?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../Login/login.css">
-  <title>Cadastrar</title>
+  <link rel="stylesheet" href="../Cadastrar/cadastrar.css">
+  <title>Recuperar senha</title>
 </head>
 
 <body>
 
   <div class="container">
     <form method="POST">
-      <h2>Cadastra-se</h2>
+      <h2>Cadastrar</h2>
       <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" placeholder="Wiuver Ribeiro">
+      <input type="text" id="nome" name="nome" placeholder="Nome Completo">
       <label for="email">E-mail:</label>
       <input type="text" id="email" name="email" placeholder="contato@gmail.com">
       <label for="senha">Senha:</label>
-      <input type="password" id="senha" name="senha" placeholder="1234" autocomplete="off">
+      <input type="password" id="senha" name="senha" placeholder="Senha" autocomplete="off">
       <input type="submit" value="Cadastrar" name="cadastrar">
       <div class="btn-acoes">
         <a class="nao_tem_conta">Já tem conta?</a>
